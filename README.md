@@ -27,8 +27,18 @@
 2.安装ubuntu
 
     问题：安装完显示现在立即重启，然后重启自检，界面卡住，或者检测出错
+    
+    问题原因：显卡是英伟达10系列，ubuntu18没有自带该系列驱动 所以会有电源方面问题，Acpi检查出错
  
-    解决方法：例如Acpi检查出错，按e进入grub设置，把ACPI检测关掉就行！
+    解决方法：选择 install ubuntu 的地方 按e   在linux开头那行末尾处 加入 acpi=off
+             这时候在终端输入命令来更新n卡在linux下的驱动
+             sudo add-apt-repository ppa:graphics-drivers/ppa
+             sudo apt-get update
+             sudo apt-get install nvidia-381
+
+
+    
+    https://blog.csdn.net/weixin_30480075/article/details/96293383
   
        
 注意： 
